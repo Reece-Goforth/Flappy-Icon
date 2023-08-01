@@ -276,7 +276,7 @@ layer_0/tile_data = PackedInt32Array(1507328, 262144, 0, 1507329, 65536, 0, 1507
 script = ExtResource("8_ftvuu")
 
 [node name="Player" parent="." instance=ExtResource("1_hmjts")]
-position = Vector2(94, 196)
+position = Vector2(51, 114)
 
 [node name="UI" parent="." instance=ExtResource("7_53ogi")]
 
