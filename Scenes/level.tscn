@@ -1,0 +1,285 @@
+[gd_scene load_steps=13 format=3 uid="uid://dbkvdfoabkvaq"]
+
+[ext_resource type="PackedScene" uid="uid://chqdy7nuljb1k" path="res://Scenes/player.tscn" id="1_hmjts"]
+[ext_resource type="Script" path="res://Scenes/level.gd" id="1_mj0nn"]
+[ext_resource type="PackedScene" uid="uid://dlla5g0cys4k4" path="res://Scenes/wall.tscn" id="2_3ts1e"]
+[ext_resource type="Texture2D" uid="uid://bkx5cwlimnhcy" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Big Clouds.png" id="4_17sjj"]
+[ext_resource type="Texture2D" uid="uid://dbglkblj7ltbj" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" id="4_s80ql"]
+[ext_resource type="Script" path="res://moving_background.gd" id="5_7c55m"]
+[ext_resource type="PackedScene" uid="uid://djuayxu2qckcl" path="res://Scenes/ui.tscn" id="7_53ogi"]
+[ext_resource type="PackedScene" uid="uid://bcuecbhhdams6" path="res://Scenes/Particles/death_effect.tscn" id="7_lhwo4"]
+[ext_resource type="Texture2D" uid="uid://d2ae4wkh1w3if" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="7_ue7qw"]
+[ext_resource type="Script" path="res://moving_tilemap.gd" id="8_ftvuu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvlv4"]
+texture = ExtResource("7_ue7qw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+24:0/0 = 0
+25:0/0 = 0
+26:0/0 = 0
+27:0/0 = 0
+30:0/0 = 0
+31:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+21:1/0 = 0
+24:1/0 = 0
+25:1/0 = 0
+26:1/0 = 0
+27:1/0 = 0
+30:1/0 = 0
+31:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+24:2/0 = 0
+25:2/0 = 0
+26:2/0 = 0
+27:2/0 = 0
+30:2/0 = 0
+31:2/0 = 0
+32:2/0 = 0
+33:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+24:3/0 = 0
+25:3/0 = 0
+26:3/0 = 0
+27:3/0 = 0
+30:3/0 = 0
+31:3/0 = 0
+32:3/0 = 0
+33:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+24:6/0 = 0
+25:6/0 = 0
+26:6/0 = 0
+27:6/0 = 0
+30:6/0 = 0
+31:6/0 = 0
+32:6/0 = 0
+33:6/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+21:7/0 = 0
+24:7/0 = 0
+25:7/0 = 0
+26:7/0 = 0
+27:7/0 = 0
+30:7/0 = 0
+31:7/0 = 0
+32:7/0 = 0
+33:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+24:8/0 = 0
+25:8/0 = 0
+26:8/0 = 0
+27:8/0 = 0
+30:8/0 = 0
+31:8/0 = 0
+32:8/0 = 0
+33:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+24:9/0 = 0
+25:9/0 = 0
+26:9/0 = 0
+27:9/0 = 0
+30:9/0 = 0
+31:9/0 = 0
+32:9/0 = 0
+33:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_46u1t"]
+sources/0 = SubResource("TileSetAtlasSource_mvlv4")
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_mj0nn")
+wall_scene = ExtResource("2_3ts1e")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sky" type="Sprite2D" parent="Background"]
+position = Vector2(112.5, 198)
+scale = Vector2(0.585938, 3.15625)
+texture = ExtResource("4_s80ql")
+
+[node name="Clouds" type="Sprite2D" parent="Background"]
+texture_repeat = 3
+position = Vector2(1, 167)
+texture = ExtResource("4_17sjj")
+centered = false
+script = ExtResource("5_7c55m")
+
+[node name="repeat" type="Sprite2D" parent="Background/Clouds"]
+position = Vector2(672, 50)
+texture = ExtResource("4_17sjj")
+metadata/_edit_lock_ = true
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="WallSpawnPositions" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="WallSpawnPositions"]
+position = Vector2(262, 228)
+
+[node name="Marker2D2" type="Marker2D" parent="WallSpawnPositions"]
+position = Vector2(262, 256)
+
+[node name="Marker2D5" type="Marker2D" parent="WallSpawnPositions"]
+position = Vector2(262, 284)
+
+[node name="Marker2D3" type="Marker2D" parent="WallSpawnPositions"]
+position = Vector2(261, 102)
+
+[node name="Marker2D3" type="Marker2D" parent="WallSpawnPositions/Marker2D3"]
+position = Vector2(-1, -25)
+
+[node name="Marker2D4" type="Marker2D" parent="WallSpawnPositions"]
+position = Vector2(261, 149)
+
+[node name="Marker2D7" type="Marker2D" parent="WallSpawnPositions"]
+position = Vector2(261, 190)
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="WallSpawnTimer" type="Timer" parent="Timers"]
+autostart = true
+
+[node name="LevelRestart" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="Particles" type="Node2D" parent="."]
+
+[node name="DeathEffect" parent="Particles" instance=ExtResource("7_lhwo4")]
+lifetime = 0.2
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Ground" type="TileMap" parent="Foreground"]
+tile_set = SubResource("TileSet_46u1t")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(1507328, 262144, 0, 1507329, 65536, 0, 1507330, 131072, 0, 1507331, 196608, 0, 1507332, 262144, 0, 1507333, 65536, 0, 1507334, 131072, 0, 1507335, 196608, 0, 1507336, 262144, 0, 1507337, 65536, 0, 1507338, 131072, 0, 1507339, 196608, 0, 1507340, 262144, 0, 1507341, 65536, 0, 1507342, 131072, 0, 1572864, 65536, 1, 1572865, 131072, 4, 1572866, 65536, 1, 1572868, 65536, 1, 1572870, 65536, 1, 1572872, 65536, 1, 1572874, 65536, 1, 1572867, 131072, 4, 1572869, 131072, 4, 1572871, 131072, 4, 1572873, 131072, 4, 1572875, 131072, 4, 1572876, 65536, 1, 1572877, 131072, 4, 1572878, 65536, 1, 1507343, 262144, 0, 1572879, 65536, 1, 1507344, 65536, 0, 1572880, 131072, 4, 1507345, 131072, 0, 1572881, 65536, 1, 1507346, 196608, 0, 1572882, 131072, 4, 1507347, 262144, 0, 1572883, 65536, 1, 1507348, 65536, 0, 1572884, 131072, 4, 1507349, 131072, 0, 1572885, 65536, 1, 1507350, 196608, 0, 1572886, 131072, 4, 1507351, 262144, 0, 1572887, 65536, 1, 1507352, 65536, 0, 1572888, 131072, 4, 1507353, 131072, 0, 1572889, 65536, 1, 1507354, 196608, 0, 1572890, 131072, 4, 1507355, 262144, 0, 1572891, 65536, 1, 1507356, 65536, 0, 1572892, 131072, 4, 1507357, 131072, 0, 1572893, 65536, 1)
+script = ExtResource("8_ftvuu")
+
+[node name="Player" parent="." instance=ExtResource("1_hmjts")]
+position = Vector2(94, 196)
+
+[node name="UI" parent="." instance=ExtResource("7_53ogi")]
+
+[connection signal="timeout" from="Timers/WallSpawnTimer" to="." method="_on_wall_spawn_timer_timeout"]
+[connection signal="timeout" from="Timers/LevelRestart" to="." method="_on_level_restart_timeout"]
+[connection signal="dead" from="Player" to="." method="_on_player_dead"]

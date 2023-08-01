@@ -1,0 +1,95 @@
+[gd_scene load_steps=15 format=3 uid="uid://chqdy7nuljb1k"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_vxigp"]
+[ext_resource type="Texture2D" uid="uid://bu2bhtj3d6dnp" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/04-Fall/Fall 01.png" id="2_86s1t"]
+[ext_resource type="Texture2D" uid="uid://brb1apwp3q3b3" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/03-Jump/Jump 01.png" id="3_mgsmg"]
+[ext_resource type="Texture2D" uid="uid://bumcki3o8pat3" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/03-Jump/Jump 02.png" id="4_dwn51"]
+[ext_resource type="Texture2D" uid="uid://k2uwliy2jg81" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/03-Jump/Jump 03.png" id="5_y7887"]
+[ext_resource type="Texture2D" uid="uid://43nkp0jyystm" path="res://Treasure Hunters/The Crusty Crew/Sprites/Dust Particles/Jump 01.png" id="6_pubo8"]
+[ext_resource type="Texture2D" uid="uid://bhsyxg0botxdf" path="res://Treasure Hunters/The Crusty Crew/Sprites/Dust Particles/Jump 02.png" id="7_uf6q8"]
+[ext_resource type="Texture2D" uid="uid://dxeo5mteu686n" path="res://Treasure Hunters/The Crusty Crew/Sprites/Dust Particles/Jump 03.png" id="8_uuppo"]
+[ext_resource type="Texture2D" uid="uid://d1hcqy60bc2kl" path="res://Treasure Hunters/The Crusty Crew/Sprites/Dust Particles/Jump 04.png" id="9_japah"]
+[ext_resource type="Texture2D" uid="uid://cs8mqegkt6xc3" path="res://Treasure Hunters/The Crusty Crew/Sprites/Dust Particles/Jump 05.png" id="10_u3vhm"]
+[ext_resource type="Texture2D" uid="uid://bciep4dotpybs" path="res://Treasure Hunters/The Crusty Crew/Sprites/Dust Particles/Jump 06.png" id="11_w2vhq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vncm5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_86s1t")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mgsmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dwn51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y7887")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv7lb"]
+size = Vector2(14, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6mbh4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_pubo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uf6q8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uuppo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_japah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u3vhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_w2vhq")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"dust",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"empty",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_vxigp")
+
+[node name="Icon" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vncm5")
+animation = &"jump"
+frame = 2
+frame_progress = 1.0
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mv7lb")
+
+[node name="DustParticles" type="AnimatedSprite2D" parent="."]
+top_level = true
+sprite_frames = SubResource("SpriteFrames_6mbh4")
+animation = &"dust"
+speed_scale = 3.0

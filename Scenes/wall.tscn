@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlla5g0cys4k4"]
+
+[ext_resource type="PackedScene" uid="uid://bdifti6ny0mcj" path="res://Scenes/wall_obj.tscn" id="1_qf41r"]
+[ext_resource type="Script" path="res://Scenes/wall.gd" id="1_v45ec"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ffvo"]
+size = Vector2(21, 110)
+
+[node name="Wall" type="Node2D"]
+script = ExtResource("1_v45ec")
+
+[node name="Wall" parent="." instance=ExtResource("1_qf41r")]
+script = null
+
+[node name="LevelUpArea" type="Area2D" parent="."]
+
+[node name="LevelUp" type="CollisionShape2D" parent="LevelUpArea"]
+position = Vector2(-0.5, 8)
+shape = SubResource("RectangleShape2D_0ffvo")
+
+[connection signal="body_entered" from="Wall" to="." method="_on_wall_body_entered"]
+[connection signal="body_entered" from="LevelUpArea" to="." method="_on_level_up_area_body_entered"]
